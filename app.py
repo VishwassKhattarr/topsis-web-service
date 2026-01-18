@@ -36,7 +36,16 @@ def submit():
     run_topsis(input_path, weights, impacts, output_path)
 
     # Send email
-    send_email(email, output_path)
+    try:
+     send_email(email, output_path)
+     email_status = "Email sent successfully"
+    except Exception as e:
+     print("Email error:", e)
+     email_status = "Email could not be sent (service restricted)"
+
+    
+
+
 
     # Read result and convert to HTML table
     df = pd.read_csv(output_path)
