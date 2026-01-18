@@ -28,6 +28,7 @@
 
     {% if tables %}
         <div class="result">
+            <p><strong>Email status:</strong> {{ email_status }}</p>
             <h2>TOPSIS Result</h2>
             <p><strong>Result sent to:</strong> {{ email }}</p>
             {{ tables|safe }}
